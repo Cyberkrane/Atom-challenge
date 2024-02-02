@@ -1,0 +1,17 @@
+footer{
+    background-color: var(--black);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    height: 47px;
+}
+
+.btn{
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+}
