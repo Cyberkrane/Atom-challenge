@@ -7,6 +7,7 @@ import { HomeComponent } from './index/home/home.component';
 import { SecondPageComponent } from './index/second-page/second-page.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { HamburguerComponent } from './components/hamburguer/hamburguer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HeaderComponent } from './layout/header/header.component';
     HomeComponent,
     SecondPageComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    HamburguerComponent
   ],
   imports: [
     BrowserModule,

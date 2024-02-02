@@ -18,3 +18,7 @@
     font-size: var(--font-size-s);
     font-weight: 500;
 }
+
+html,body{
+  background-color: #000000;
+}
