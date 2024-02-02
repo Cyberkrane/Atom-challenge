@@ -1,0 +1,20 @@
+
+  <div class="dropdown">
+
+    <div class="logo"></div>
+    
+    <button (click)="toggleDropdown()" *ngIf="!mostrarBoton" class="dropbtn">
+      Menú
+    </button>
+  
+    <div id="myDropdown" class="dropdown-content" [ngClass]="{'show': dropdownVisible}">
+  
+      <nav>
+        <div class="btn">boton</div>
+        <div class="btn">boton</div>
+        <div class="btn">boton</div>
+      </nav>
+    </div>
+  
+  </div>
+

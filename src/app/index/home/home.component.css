@@ -1,14 +1,15 @@
 main {
+  width: 1440px;
+  height: calc(95vh - 85px);
   background-color: var(--white);
+  margin: 0 auto;
   border: 1px none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  height: calc(95vh - 106px);
-  width: 1440px;
-  /* width: 100vw; */
+  gap: 20px;
+ 
 }
 
 .texto-principal {
@@ -39,8 +40,9 @@ main {
   letter-spacing: 0;
   line-height: 32.2px;
   margin-top: -1px;
+  margin-bottom: 30px;
   text-align: center;
-  width: 42%;
+  width: 55%;
 }
 
 .componente-informativo {
@@ -136,6 +138,8 @@ main {
 @media (max-width: 767px){
   main{
     width: 100%;
+    height: calc(95vh - 109px);
+
   }
   .texto-principal{
     min-width: 131px;
