@@ -1,4 +1,5 @@
 <main>
+ 
   <table>
     <thead>
       <tr>
@@ -9,13 +10,21 @@
   <tbody>
 
     <tr *ngFor="let movie of movies" >
-      <td> <img src="{{movie.Poster}}" alt="{{movie.Title}}"></td>
-      <td>{{movie.Title}} </td>
+
+      <td>{{ movie.Title }} </td>
+    
       <td> {{movie.Type}} </td>
+
       <td>
           <p class="status delivered">{{movie.Year}}</p>
       </td>
-      <!-- <td> <strong>{{movie.imdbID}} </strong></td> -->
+
+      <td>
+        <a href="http://{{movie.Poster}}" target="_blank" rel="noopener noreferrer">{{movie.Poster | truncate }}</a>
+      </td>
+
+      <td> <strong>{{movie.imdbID }} </strong></td>
+
     </tr>
 
   </tbody>
