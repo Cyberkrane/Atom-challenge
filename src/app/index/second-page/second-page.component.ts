@@ -12,10 +12,10 @@ export class SecondPageComponent {
 
 
   displayedColumns: string[] = [
-    'Poster',
     'Title',
     'Type',
     'Year',
+    'Poster',
     'imdbID'
   ];
   allMovies: Movie[] = [];

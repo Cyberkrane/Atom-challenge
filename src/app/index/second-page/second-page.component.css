@@ -34,11 +34,14 @@ main {
       border: 1px solid rgba(123, 123, 122, 0.228);
     }
     td{
-      /* padding: 1.5rem; */
-
-      img{
-        width: 100%;
-      }
+      padding-top: 1.5rem;
     }
   }
+}
+
+.truncate-tex{
+  width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
