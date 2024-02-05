@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Movie } from 'src/app/interfaces/movie';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-second-page',
@@ -7,4 +10,30 @@ import { Component } from '@angular/core';
 })
 export class SecondPageComponent {
 
+
+  displayedColumns: string[] = [
+    'Poster',
+    'Title',
+    'Type',
+    'Year',
+    'imdbID'
+  ];
+  allMovies: Movie[] = [];
+  movies: any;
+
+  constructor(private moviesService: MoviesService) {}
+
+  ngOnInit(): void {
+    this.getMovie();
+  }
+
+  getMovie(){
+   this.moviesService.getMoviesA().subscribe((data) => {
+     this.movies = data.body.Search;
+     console.log(this.movies);
+
+   })
+  }
+
 }
+

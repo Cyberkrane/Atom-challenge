@@ -32,3 +32,8 @@
 html,body{
   background-color: #000000;
 }
+
+&::-webkit-scrollbar {
+  background-color: transparent;
+  display: none;
+  }
