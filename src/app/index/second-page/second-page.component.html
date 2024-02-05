@@ -1,24 +1,25 @@
 <main>
-    <div class="texto-principal">Second Page</div>
+  <table>
+    <thead>
+      <tr>
+          <th *ngFor="let header of displayedColumns"> {{ header }} <span class="icon-arrow">&UpArrow;</span></th>
+      </tr>
+  </thead>
   
-    <div class="texto-secundario">
-      <p class="parrafo-secundario">
-        Texto secundario texto secundario texto secundario texto secundario texto
-        secundario texto secundario
-      </p>
-    </div>
-  
-    <div class="componente-informativo">
-      <img class="caritas-negras"
-        src="img/caritas-negras@2x.png"
-        alt="caritas negras"
-      />
-      <div class="flex-col">
-        <div class="texto-sobre-otro-elemento-texto-sobre-otro-elemento">
-          Texto sobre otro elemento
-        </div>
-  
-        <div class="botn-7">botón</div>
-      </div>
-    </div>
-  </main>
+  <tbody>
+
+    <tr *ngFor="let movie of movies" >
+      <td> <img src="{{movie.Poster}}" alt="{{movie.Title}}"></td>
+      <td>{{movie.Title}} </td>
+      <td> {{movie.Type}} </td>
+      <td>
+          <p class="status delivered">{{movie.Year}}</p>
+      </td>
+      <!-- <td> <strong>{{movie.imdbID}} </strong></td> -->
+    </tr>
+
+  </tbody>
+
+  </table> 
+
+</main>

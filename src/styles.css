@@ -17,8 +17,23 @@
     font-family: var(--font-family-inter);
     font-size: var(--font-size-s);
     font-weight: 500;
+    width: fit-content;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 35px;
+}
+
+.btn:hover{
+  cursor: pointer;
 }
 
 html,body{
   background-color: #000000;
 }
+
+&::-webkit-scrollbar {
+  background-color: transparent;
+  display: none;
+  }
