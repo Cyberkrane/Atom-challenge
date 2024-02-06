@@ -1,20 +1,11 @@
-
-  <div class="dropdown">
-
-    <div class="logo"></div>
-    
-    <button (click)="toggleDropdown()" *ngIf="!mostrarBoton" class="btn">
-      Menú
-    </button>
-  
-    <div id="myDropdown" class="dropdown-content" [ngClass]="{'show': dropdownVisible}">
-  
-      <nav>
-        <div class="btn" routerLink="home">home</div>
-        <div class="btn" routerLink="second-page">second page</div>
-        <div class="btn">to nowhere</div>
-      </nav>
-    </div>
-  
+<div class="dropdown">
+  <div class="logo"></div>
+  <button (click)="toggleDropdown()" *ngIf="!mostrarBoton" class="btn">Menú</button>
+  <div id="myDropdown" class="dropdown-content" [ngClass]="{'show': dropdownVisible}">
+    <nav>
+      <div class="btn" routerLink="home">home</div>
+      <div class="btn" routerLink="second-page">second page</div>
+      <div class="btn">to nowhere</div>
+    </nav>
   </div>
-
+</div>
