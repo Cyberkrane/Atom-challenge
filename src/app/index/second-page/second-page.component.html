@@ -6,7 +6,14 @@
    <table *ngIf="movies.length > 0; else empty">
     <thead>
       <tr>
-          <th *ngFor="let header of displayedColumns"> {{ header }} <span class="icon-arrow">&UpArrow;</span></th>
+          <th *ngFor="let header of displayedColumns"> 
+              <span (click)="onSort(header)" *ngIf="header !== 'Poster'">
+                {{ columnSorting[header] === 'asc' ? '▲' : '▼' }}
+              </span>
+
+              {{ header }} 
+           
+          </th>
       </tr>
   </thead>
   
@@ -14,32 +21,32 @@
 
     <tr *ngFor="let movie of movies" >
 
-      <td>{{ movie.Title }} </td>
+      <td>
+        <img [src]="movie.Poster" [alt]="movie.Title" [ngStyle]="{height: '200px'}">
+      </td>
+
+      <td>
+        <p>{{ movie.Title | truncate }} </p>
+      </td>
     
-      <td> {{movie.Type}} </td>
-
       <td>
-          <p class="status delivered">{{movie.Year}}</p>
+        <p>{{movie.Type}}</p>
       </td>
 
       <td>
-        <a href="http://{{movie.Poster}}" target="_blank" rel="noopener noreferrer">{{movie.Poster | truncate }}</a>
+          <p>{{movie.Year}}</p>
       </td>
-
-      <td> <strong>{{movie.imdbID }} </strong></td>
 
     </tr>
 
   </tbody>
 
   </table> 
-  <ng-template #empty class="empty">
-    <h3>No se encontraron peliculas</h3>
+  <ng-template #empty>
+    <div class="empty">
+      <h3>No se encontraron peliculas</h3>
+      <img src="../../../assets/img/caritas-negras@2x.png" alt="">
+    </div>
+    
   </ng-template>
 </main>
-<div class="app">
-
-  <!-- <div *ngIf="movies.length > 0; else empty" class="container">
-  </div> -->
- 
-</div>
