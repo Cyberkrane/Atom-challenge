@@ -11,9 +11,4 @@ export class TruncatePipePipe implements PipeTransform {
     }
     return value;
   }
-
-  // transform(value: string, length: number, symbol: string) {
-  //   return value.split(' ').slice(0, length).join(' ') + symbol;
-  // }
-
 }

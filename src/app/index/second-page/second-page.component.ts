@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable, Subscription, debounceTime, distinct, filter, fromEvent, map, switchMap } from 'rxjs';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription, debounceTime, distinct, filter, fromEvent, map, switchMap } from 'rxjs';
 import { Movie } from 'src/app/interfaces/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -8,12 +8,13 @@ import { MoviesService } from 'src/app/services/movies.service';
   templateUrl: './second-page.component.html',
   styleUrls: ['./second-page.component.css']
 })
-export class SecondPageComponent {
+export class SecondPageComponent implements OnInit, OnDestroy{
 
   movies:Movie[] = [];
   @ViewChild('movieSearchInput', { static: true }) movieSearchInput!: ElementRef
   movieSuscription!: Subscription
-  displayedColumns: string[] = ['Title', 'Type', 'Year', 'Poster', 'imdbID'];
+  displayedColumns: Array<keyof Movie> = ['Poster', 'Title', 'Type', 'Year'];
+  arrow: string = '▲';
   
   constructor(private moviesService: MoviesService) {}
 
@@ -36,5 +37,29 @@ export class SecondPageComponent {
   ngOnDestroy(): void {
     this.movieSuscription.unsubscribe()
   }
+
+columnSorting: { [key: string]: string } = {};
+
+
+onSort(header: keyof Movie) {
+  if (this.movies.length == 0) return;
+
+  const currentSort = this.columnSorting[header];
+
+  const newSort = currentSort === 'asc' ? 'desc' : 'asc';
+
+  this.columnSorting[header] = newSort;
+
+  this.movies.sort((a, b) => {
+      if (a[header] < b[header]) {
+          return newSort === 'asc' ? -1 : 1;
+      } else if (a[header] > b[header]) {
+          return newSort === 'asc' ? 1 : -1;
+      } else {
+          return 0;
+      }
+  });
 }
 
+
+}
