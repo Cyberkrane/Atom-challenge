@@ -37,24 +37,6 @@ th {
 th span {
   cursor: pointer;
 }
-/*th td{
-   padding: 5px 10px;
-}
-tr {
-  border: 1px solid rgba(123, 123, 122, 0.228);
-  display: flex;
-  align-items: center;
-}
-td{
-  padding-top: 1.5rem;
-} */
-
-/* .truncate-tex{
-  width: 230px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-} */
 .search {
   width: 100%;
   height: 50px;
@@ -71,6 +53,7 @@ input {
   align-content: baseline;
   font-size: var(--font-size-s);
 }
-/* @media (min-width: 768px) and (max-width: 1440px) {
 
-} */
+@media (min-width: 768px) and (max-width: 1440px) {
+
+}

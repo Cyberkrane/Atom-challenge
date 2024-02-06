@@ -26,7 +26,7 @@
       </td>
 
       <td>
-        <p>{{ movie.Title }} </p>
+        <p>{{ movie.Title | truncate }} </p>
       </td>
     
       <td>
@@ -36,10 +36,6 @@
       <td>
           <p>{{movie.Year}}</p>
       </td>
-
-     
-
-      <!-- <td> <strong>{{movie.imdbID }} </strong></td> -->
 
     </tr>
 
