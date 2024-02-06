@@ -11,6 +11,7 @@ import { HamburguerComponent } from './components/hamburguer/hamburguer.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TruncatePipePipe } from './pipes/truncate-pipe.pipe';
+import { FilterPipe } from './pipes/filter-pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { TruncatePipePipe } from './pipes/truncate-pipe.pipe';
     FooterComponent,
     HeaderComponent,
     HamburguerComponent,
-    TruncatePipePipe
+    TruncatePipePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

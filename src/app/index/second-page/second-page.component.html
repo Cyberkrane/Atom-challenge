@@ -1,6 +1,9 @@
 <main>
- 
-  <table>
+  <div class="search">
+    <input type="text" #movieSearchInput placeholder="Buscar pelicula" />
+  </div>
+
+   <table *ngIf="movies.length > 0; else empty">
     <thead>
       <tr>
           <th *ngFor="let header of displayedColumns"> {{ header }} <span class="icon-arrow">&UpArrow;</span></th>
@@ -30,5 +33,13 @@
   </tbody>
 
   </table> 
-
+  <ng-template #empty class="empty">
+    <h3>No se encontraron peliculas</h3>
+  </ng-template>
 </main>
+<div class="app">
+
+  <!-- <div *ngIf="movies.length > 0; else empty" class="container">
+  </div> -->
+ 
+</div>
